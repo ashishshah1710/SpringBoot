@@ -1,5 +1,6 @@
 package com.CollegeAdmission.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,16 +12,20 @@ public class Admission
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int amd_no;
+	private Long amd_no;
+	@Column
 	private String name;
+	@Column
 	private String gmail;
+	@Column
 	private String address;
+	@Column
 	private long mobile;
 	public Admission() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Admission(int amd_no, String name, String gmail, String address, long mobile) {
+	public Admission(Long amd_no, String name, String gmail, String address, long mobile) {
 		super();
 		this.amd_no = amd_no;
 		this.name = name;
@@ -28,10 +33,10 @@ public class Admission
 		this.address = address;
 		this.mobile = mobile;
 	}
-	public int getAmd_no() {
+	public Long getAmd_no() {
 		return amd_no;
 	}
-	public void setAmd_no(int amd_no) {
+	public void setAmd_no(Long amd_no) {
 		this.amd_no = amd_no;
 	}
 	public String getName() {

@@ -34,7 +34,7 @@ public class AdmissionController
 	@GetMapping("/{id}")
 	public ResponseEntity<Admission> getAllById(@PathVariable Long id)
 	{
-		return ResponseEntity.ok(adm.findById((long)id).orElse(null));
+		return ResponseEntity.ok(adm.findById(id).orElse(null));
 	}
 	
 	@PostMapping("/add")
@@ -54,7 +54,7 @@ public class AdmissionController
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Admission> delete(@PathVariable Long id)
 	{
-		adm.findById((long)id).ifPresent(adm::delete);
+		adm.findById(id).ifPresent(adm::delete);
 		return ResponseEntity.ok().build();
 	}
 }
